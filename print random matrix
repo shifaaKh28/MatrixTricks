@@ -1,0 +1,41 @@
+
+	public static void printMatrix(int[][] mat){
+		for(int i=0;i<mat.length;i++){
+			for(int j=0;j<mat[0].length;j++)	{
+				System.out.print(mat[i][j]+" ");
+
+			}
+			System.out.println();
+		}
+
+
+	}
+
+	public static int[][]randomMatrix(int rows,int colm,int a, int b){
+		int[][]	mat=new int [rows][colm];
+		++b;
+		for(int i=0;i<rows;i++) {
+			for(int j=0;j<mat[0].length;j++) {
+				mat[i][j]=(int)(Math.random()*(b-a))+a;	
+			}
+		}
+		return mat;
+	}
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in); 
+		System.out.println(" how many rows you want in the matrix?");
+		int rows=sc.nextInt();
+
+		System.out.println(" how many column you want in the matrix?");
+		int col=sc.nextInt();
+
+		System.out.println("enter the the minimal value of the range");
+		int a=sc.nextInt();
+
+		System.out.println("enter the the maximal value of the range");
+		int b=sc.nextInt();
+		
+    int[][] mat= randomMatrix(rows,col,a,b);
+    printMatrix(mat);
+	}
+}
